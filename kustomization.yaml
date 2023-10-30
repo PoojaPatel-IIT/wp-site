@@ -5,5 +5,5 @@ secretGenerator:
   - password=Y0dGemMzZHZjbVF4TW
 resources:
   - storage-class.yaml
-  - database/
-  - wp/
+  - database/.
+  - wp/.
