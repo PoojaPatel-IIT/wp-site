@@ -1,0 +1,9 @@
+
+secretGenerator:
+- name:  my-sql-password
+  literals:
+  - password=Y0dGemMzZHZjbVF4TW
+resources:
+  - storage-class.yaml
+  - database/
+  - wp/

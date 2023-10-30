@@ -1,0 +1,19 @@
+Steps:
+
+1. secret MYSQL_ROOT_PASSWORD
+2. SC 
+
+MySQL:
+3. pvc 
+4. deployment 
+5. svc 
+6. exec and see it works 
+
+
+WP:
+7. pvc
+8. deployment
+9. svc 
+10. see if all running 
+
+11. load site

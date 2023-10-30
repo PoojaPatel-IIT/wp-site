@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-dep-wp
+  name: my-dep-wp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-dep-wp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: my-dep-wp
+    spec:
+      containers:
+      - name: wp
+        image: wordpress:latest
+        ports:
+        - containerPort: 80
+          name: wp
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: my-service-mysql
+        - name: WORDPRESS_DB_USER
+          value: root  
+        - name: WORDPRESS_DB_NAME
+          value: wp-db
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-sql-password
+              key: pass
+        resources: {}
+        volumeMounts:
+        - mountPath: "/var/www/html"
+          name: mypd
+      volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: myclaim-wp
+status: {}

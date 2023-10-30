@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-dep-mysql
+  name: my-dep-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-dep-mysql
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: my-dep-mysql
+    spec:
+      containers:
+      - name: wp
+        image: mysql:latest
+        ports:
+        - containerPort: 3306
+          name: mysql
+        env:
+        - name: MYSQL_DATABASE
+          value: wp-db
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-sql-password
+              key: pass
+        resources: {}
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mypd
+      volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: myclaim-mysql
+status: {}
