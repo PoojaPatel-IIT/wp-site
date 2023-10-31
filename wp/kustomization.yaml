@@ -3,3 +3,4 @@ resources:
   - pv.yaml
   - pvc.yaml
   - svc.yaml
+  - wp-config-configmap.yaml
