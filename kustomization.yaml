@@ -1,8 +1,8 @@
 
-secretGenerator:
-- name:  my-sql-password
-  literals:
-  - pass=Y0dGemMzZHZjbVF4TW
+# secretGenerator:
+# - name:  my-sql-password
+#   literals:
+#   - pass=Y0dGemMzZHZjbVF4TW
 resources:
   - storage-class.yaml
   - secret.yaml
