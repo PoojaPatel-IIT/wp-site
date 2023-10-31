@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: wp
-        image: mysql:latest
+        image: mysql:5.6
         ports:
         - containerPort: 3306
           name: mysql
