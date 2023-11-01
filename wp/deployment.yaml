@@ -38,15 +38,15 @@ spec:
         volumeMounts:
         - mountPath: "/var/www/html"
           name: mypd
-        - mountPath: "/var/www/html/wp-config.php"
-          name: config-vol
+        # - mountPath: "/var/www/html/wp-config.php"
+        #   name: config-vol
       volumes:
-        - name: config-vol
-          configMap:
-            name: my-config
-            items:
-            - key: wp-config.php
-              path: keys
+        # - name: config-vol
+        #   configMap:
+        #     name: my-config
+        #     items:
+        #     - key: wp-config.php
+        #       path: keys
         - name: mypd
           persistentVolumeClaim:
             claimName: myclaim-wp
