@@ -1,7 +1,7 @@
 secretGenerator:
 - name:  mysql-pass
   literals:
-  - pass=Y0dGemMzZHZjbVF4TW
+  - password=Y0dGemMzZHZjbVF4TW
 resources:
   - template/.
   # - storage-class.yaml
