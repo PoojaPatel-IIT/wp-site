@@ -1,10 +1,10 @@
-
-# secretGenerator:
-# - name:  my-sql-password
-#   literals:
-#   - pass=Y0dGemMzZHZjbVF4TW
+secretGenerator:
+- name:  mysql-pass
+  literals:
+  - pass=Y0dGemMzZHZjbVF4TW
 resources:
-  - storage-class.yaml
-  - secret.yaml
-  - database/.
-  - wp/.
+  - template/.
+  # - storage-class.yaml
+  # - secret.yaml
+  # - database/.
+  # - wp/.
