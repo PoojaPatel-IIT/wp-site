@@ -43,10 +43,10 @@ spec:
       volumes:
         - name: config-vol
           configMap:
-            - name: my-config
-              items:
-              - key: wp-config.php
-                path: keys
+            name: my-config
+            items:
+            - key: wp-config.php
+              path: keys
         - name: mypd
           persistentVolumeClaim:
             claimName: myclaim-wp
