@@ -45,7 +45,7 @@ spec:
           configMap:
             - name: my-config
               items:
-              - key: cm.yaml
+              - key: wp-config.php
                 path: keys
         - name: mypd
           persistentVolumeClaim:
