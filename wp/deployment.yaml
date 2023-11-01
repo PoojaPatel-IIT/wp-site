@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: my-dep-wp
-  name: my-dep-wp
+  name: wordpress
 spec:
   replicas: 1
   selector:
@@ -23,7 +23,7 @@ spec:
           name: wp
         env:
         - name: WORDPRESS_DB_HOST
-          value: my-service-mysql
+          value: mysql
         # - name: WORDPRESS_DB_USER
         #   value: root  
         # - name: WORDPRESS_DB_NAME
